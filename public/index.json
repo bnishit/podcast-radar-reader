@@ -3,6 +3,11 @@
   "runs": [
     {
       "date": "2026-02-08",
+      "path": "runs/2026-02-08-note-CHscuD6Q4xs.json",
+      "label": "08 Feb 2026 · NOTE · CHscuD6Q4xs"
+    },
+    {
+      "date": "2026-02-08",
       "path": "runs/2026-02-08.json",
       "label": "08 Feb 2026"
     }

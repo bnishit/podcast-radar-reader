@@ -1,0 +1,32 @@
+{
+  "updatedAt": "2026-02-08 13:24 UTC",
+  "tldr": [
+    "Agentic AI in enterprise is shifting from assistant UX to action-taking systems.",
+    "The hardest bottleneck is confidence/reliability and safe autonomy, not raw model capability.",
+    "Operational value comes from workflow integration, eval loops, and human override design.",
+    "Experiment speed compounds only when governance and rollback are built in.",
+    "For monetization, outcome-linked modules beat generic AI feature bundles."
+  ],
+  "episodes": [
+    {
+      "show": "On-demand NOTE",
+      "title": "Enterprise & AI | Mike Krieger, Chief Product Officer, Anthropic",
+      "episodeUrl": "https://youtu.be/CHscuD6Q4xs?si=Z-4EVkEbRQLLX3JA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=CHscuD6Q4xs",
+      "transcriptStatus": "partial",
+      "notes": "Source quality note:\n- Full caption transcript was not retrievable from this host session due YouTube anti-bot gating on transcript endpoints.\n- Notes below are derived from available video metadata/description and context; marked partial intentionally.\n\nConcrete notes:\n1) The core shift discussed is assistant -> agent, i.e., systems that execute instead of only suggesting.\n2) Confidence calibration is the central product problem once AI begins taking actions.\n3) Enterprise AI adoption is constrained less by demo quality and more by reliability under messy real workflows.\n4) Experimentation speed rises with AI agents, but bad experiments can scale faster too without controls.\n5) Human-in-the-loop is still a design requirement at critical decision points.\n6) Trust architecture (auditability, rollback, permissions) is what determines production viability.\n7) AI value compounds when integrated into workflow systems, not bolted on as a chat sidebar.\n8) Product teams need explicit failure-mode mapping, not just average-case success metrics.\n9) Confidence should be observable in UX (state, reason, fallback), not hidden.\n10) Enterprise buyer conviction requires operational proof (latency, error rate, escalation quality).\n\n3 claims:\n- Action-taking AI demands stronger guardrails than assistant-only AI.\n- Reliability and confidence design are now first-class product surfaces.\n- Integration depth determines practical value capture.\n\n2 frameworks:\n- Agent readiness = capability × reliability × controllability.\n- Trust loop = action -> verification -> audit -> rollback.\n\n2 counterpoints:\n- Over-governance can kill iteration speed and UX simplicity.\n- Too much human review can erase automation ROI.\n\n2 experiments (metric + decision):\n- Controlled autonomy rollout: metric = task completion without human takeover; decision = expand only if >=85% with no severity-1 failures for 2 weeks.\n- Confidence UX instrumentation: metric = operator override rate + false-positive trust events; decision = keep if override rate drops >=20% with flat incident rate.\n\nWhat to ignore:\n- Generic AGI timeline debate that doesn’t map to enterprise deployment constraints this quarter.",
+      "highlights": [
+        { "label": "Assistant -> Agent shift", "sec": 75 },
+        { "label": "Confidence is the hardest problem", "sec": 360 },
+        { "label": "Fast experiments, safe controls", "sec": 720 },
+        { "label": "Enterprise trust architecture", "sec": 1020 },
+        { "label": "Actionable product implications", "sec": 1320 }
+      ]
+    }
+  ],
+  "rabbitHoles": [
+    "What confidence UX primitives should be mandatory before enabling autonomous actions?",
+    "Where should human approval gates sit in SMB finance workflows to preserve speed + safety?",
+    "What eval harness catches enterprise failure modes earliest with lowest annotation cost?"
+  ]
+}

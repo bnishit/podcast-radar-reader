@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 
-type Episode = { show: string; title: string; notes: string; episodeUrl?: string; transcriptUrl?: string; transcriptStatus?: string }
+type Highlight = { label: string; sec: number; note?: string }
+type Episode = { show: string; title: string; notes: string; episodeUrl?: string; transcriptUrl?: string; transcriptStatus?: string; youtubeUrl?: string; highlights?: Highlight[] }
 type RunData = { updatedAt?: string; tldr?: string[]; episodes?: Episode[]; rabbitHoles?: string[] }
 type IndexData = { latest?: string; runs?: { date?: string; path: string; label?: string }[] }
 
@@ -31,7 +32,10 @@ export function App() {
     ;(async () => {
       const idx = await fetch('/index.json?_=' + Date.now()).then((r) => r.json())
       setIndex(idx)
-      const p = idx.latest || '/latest.json'
+      const q = new URLSearchParams(window.location.search)
+      const requested = q.get('run') || ''
+      const exists = (idx.runs || []).some((r: any) => r.path === requested)
+      const p = (requested && exists) ? requested : (idx.latest || '/latest.json')
       setCurrentPath(p)
       const d = await fetch('/' + p.replace(/^\//, '') + '?_=' + Date.now()).then((r) => r.json())
       setData(d)
@@ -79,8 +83,19 @@ export function App() {
             <div className="row">
               <span className="chip">Transcript: {ep.transcriptStatus || 'unknown'}</span>
               {ep.episodeUrl && <a className="btn primary" href={ep.episodeUrl} target="_blank">Open episode</a>}
+              {ep.youtubeUrl && <a className="btn" href={ep.youtubeUrl} target="_blank">Open YouTube</a>}
               {ep.transcriptUrl && <a className="btn" href={ep.transcriptUrl} target="_blank">Open transcript</a>}
             </div>
+            {!!ep.highlights?.length && (
+              <div className="row" style={{ marginTop: 10 }}>
+                {ep.highlights.map((h, j) => {
+                  const base = ep.youtubeUrl || ep.episodeUrl || ''
+                  const join = base.includes('?') ? '&' : '?'
+                  const href = `${base}${join}t=${h.sec}s`
+                  return <a key={j} className="btn" href={href} target="_blank">⏱ {h.label}</a>
+                })}
+              </div>
+            )}
             <div className="divider" />
             <div className={`read ${compact ? 'compact' : ''}`}>{renderNotes(ep.notes)}</div>
           </section>
