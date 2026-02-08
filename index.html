@@ -1,72 +1,161 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset='utf-8'/>
-  <meta name='viewport' content='width=device-width,initial-scale=1'/>
-  <title>Podcast Radar — Deep Notes</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Podcast Radar — Premium Reader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#f6f3ff;--card:#fff;--ink:#1f1630;--muted:#6d6485;--line:#e9e2ff;--accent:#6b46ff}
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink)}
-    .wrap{max-width:1120px;margin:0 auto;padding:16px;display:grid;grid-template-columns:260px 1fr;gap:14px}
-    .panel,.main{background:#fff;border:1px solid var(--line);border-radius:14px}
+    :root{--bg:#f5f2ff;--panel:#ffffffcc;--card:#fff;--ink:#1d1530;--muted:#6f6787;--line:#e8e2ff;--accent:#6b46ff;--shadow:0 12px 32px rgba(41,23,99,.08)}
+    body.dark{--bg:#121022;--panel:#1a1730cc;--card:#1b1833;--ink:#f5f2ff;--muted:#a79fc6;--line:#2d2950;--accent:#9f85ff;--shadow:none}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(1200px 700px at 10% -10%, #ede7ff 0, transparent 40%),var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif}
+    body.dark{background:radial-gradient(900px 500px at 20% -10%, #242046 0, transparent 40%),var(--bg)}
+    .wrap{max-width:1200px;margin:0 auto;padding:14px;display:grid;grid-template-columns:280px 1fr;gap:14px}
+    .panel,.main{border:1px solid var(--line);border-radius:18px;background:var(--panel);backdrop-filter:blur(8px);box-shadow:var(--shadow)}
     .panel{padding:12px;position:sticky;top:12px;height:fit-content}
-    .main{padding:14px}
-    h1{margin:0 0 6px;font-size:28px}.muted{color:var(--muted)}
-    .run{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#faf8ff;border-radius:10px;padding:8px 10px;margin:6px 0;cursor:pointer}
-    .run.active{border-color:var(--accent);background:#f1ecff}
-    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
-    .title{font-size:21px;margin:0 0 6px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .chip{font-size:12px;border:1px solid var(--line);padding:4px 8px;border-radius:999px;color:#4e4570;background:#faf8ff}
-    .btn{font-size:12px;padding:6px 10px;border-radius:8px;background:#fff;border:1px solid var(--line);text-decoration:none;color:#342a57}
-    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-    ol{margin:8px 0 0 18px;padding:0} li{margin:6px 0;line-height:1.45}
-    details{margin-top:8px} summary{cursor:pointer;color:#3f2f73;font-weight:600}
-    pre{white-space:pre-wrap;background:#fbfaff;border:1px solid var(--line);padding:12px;border-radius:10px;line-height:1.5;overflow:auto}
-    @media (max-width:900px){.wrap{grid-template-columns:1fr}.panel{position:static}}
+    .main{padding:18px}
+    .h1{font-size:34px;line-height:1.05;margin:0;font-weight:800;letter-spacing:-.02em}
+    .sub{color:var(--muted);margin-top:6px}
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .btn{font-size:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 10px;border-radius:10px;cursor:pointer}
+    .btn.primary{background:var(--accent);color:#fff;border-color:transparent}
+    .run{display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 10px;margin:7px 0;cursor:pointer}
+    .run.active{outline:2px solid var(--accent);outline-offset:0}
+    .section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:14px 0}
+    .section h2{margin:0 0 8px;font-size:26px;letter-spacing:-.01em}
+    .title{font-size:23px;margin:0 0 8px;letter-spacing:-.01em}
+    .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .chip{font-size:12px;padding:5px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:transparent}
+    .read{font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.75;color:var(--ink)}
+    .read.compact{font-size:17px;line-height:1.55}
+    .read h4{font-family:Inter,system-ui,sans-serif;font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:18px 0 8px}
+    .read ol,.read ul{margin:0 0 12px 24px}
+    .read li{margin:5px 0}
+    .read p{margin:8px 0}
+    .muted{color:var(--muted)}
+    .divider{height:1px;background:var(--line);margin:12px 0}
+    .quote{border-left:3px solid var(--accent);padding:8px 12px;background:color-mix(in srgb, var(--accent) 8%, transparent);border-radius:8px;margin:8px 0}
+    @media (max-width:980px){.wrap{grid-template-columns:1fr}.panel{position:static}}
   </style>
 </head>
 <body>
-  <div class='wrap'>
-    <aside class='panel'>
-      <h3 style='margin:0 0 8px'>Archive</h3>
-      <div id='runs'></div>
+  <div class="wrap">
+    <aside class="panel">
+      <div style="font-weight:700;margin-bottom:8px">Archive</div>
+      <div id="runs"></div>
     </aside>
-    <main class='main'>
-      <h1>Podcast Radar — Deep Notes</h1>
-      <div id='updated' class='muted'>Loading…</div>
-      <div id='root'></div>
+
+    <main class="main">
+      <h1 class="h1">Podcast Radar</h1>
+      <div class="sub">Premium deep-notes reader</div>
+      <div class="toolbar">
+        <button class="btn" id="modeBtn">Toggle dark mode</button>
+        <button class="btn" id="densityBtn">Reading: Cozy</button>
+      </div>
+      <div id="updated" class="sub" style="margin-top:10px">Loading…</div>
+      <div id="root"></div>
     </main>
   </div>
 
 <script>
-async function loadRun(path){
-  const d=await fetch(path+'?_='+Date.now()).then(r=>r.json());
-  const root=document.getElementById('root');
-  document.getElementById('updated').textContent='Updated: '+(d.updatedAt||'');
-  root.innerHTML='';
-  const tldr=document.createElement('section');
-  tldr.className='card';
-  tldr.innerHTML='<h2 class="title">TL;DR</h2><ol>'+ (d.tldr||[]).map(x=>`<li>${x}</li>`).join('') +'</ol>';
+const root = document.getElementById('root');
+let compact = false;
+
+function esc(s=''){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));}
+
+function renderNotes(text=''){
+  const lines = text.split('\n');
+  let html = '';
+  let inOL=false, inUL=false;
+  const closeLists=()=>{ if(inOL){html+='</ol>';inOL=false;} if(inUL){html+='</ul>';inUL=false;} };
+
+  for (const raw of lines){
+    const line = raw.trim();
+    if(!line){ closeLists(); html += '<p></p>'; continue; }
+
+    if(/^[A-Za-z].*:\s*$/.test(line)){
+      closeLists();
+      html += `<h4>${esc(line.replace(/:$/,''))}</h4>`;
+      continue;
+    }
+
+    if(/^\d+\)\s+/.test(line)){
+      if(inUL){html+='</ul>';inUL=false;}
+      if(!inOL){html+='<ol>';inOL=true;}
+      html += `<li>${esc(line.replace(/^\d+\)\s+/,''))}</li>`;
+      continue;
+    }
+
+    if(/^-\s+/.test(line)){
+      if(inOL){html+='</ol>';inOL=false;}
+      if(!inUL){html+='<ul>';inUL=true;}
+      const val = line.replace(/^-\s+/,'');
+      const q = /moat|framework|decision|metric|counterpoint|claim/i.test(val) ? ' class="quote"' : '';
+      html += `<li${q}>${esc(val)}</li>`;
+      continue;
+    }
+
+    closeLists();
+    html += `<p>${esc(line)}</p>`;
+  }
+  closeLists();
+  return html;
+}
+
+function renderRun(d){
+  document.getElementById('updated').textContent = 'Updated: ' + (d.updatedAt || '');
+  root.innerHTML = '';
+
+  const tldr = document.createElement('section');
+  tldr.className = 'section';
+  tldr.innerHTML = `<h2>TL;DR</h2><div class="read ${compact?'compact':''}"><ol>${(d.tldr||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ol></div>`;
   root.appendChild(tldr);
+
   (d.episodes||[]).forEach(ep=>{
-    const c=document.createElement('section'); c.className='card';
-    const links=[];
-    if(ep.episodeUrl) links.push(`<a class='btn primary' target='_blank' href='${ep.episodeUrl}'>Open episode</a>`);
-    if(ep.transcriptUrl) links.push(`<a class='btn' target='_blank' href='${ep.transcriptUrl}'>Transcript</a>`);
-    const tr=ep.transcriptStatus?`<span class='chip'>Transcript: ${ep.transcriptStatus}</span>`:'';
-    c.innerHTML=`<h2 class='title'>${ep.show} — ${ep.title}</h2><div class='row'>${tr}${links.join('')}</div><details open><summary>Deep notes</summary><pre>${ep.notes||''}</pre></details>`;
-    root.appendChild(c);
+    const sec = document.createElement('section');
+    sec.className = 'section';
+    sec.innerHTML = `
+      <h3 class="title">${esc(ep.show||'')} — ${esc(ep.title||'')}</h3>
+      <div class="row">
+        <span class="chip">Transcript: ${esc(ep.transcriptStatus||'unknown')}</span>
+        ${ep.episodeUrl ? `<a class="btn primary" target="_blank" href="${ep.episodeUrl}">Open episode</a>` : ''}
+        ${ep.transcriptUrl ? `<a class="btn" target="_blank" href="${ep.transcriptUrl}">Open transcript</a>` : ''}
+      </div>
+      <div class="divider"></div>
+      <div class="read ${compact?'compact':''}">${renderNotes(ep.notes||'')}</div>
+    `;
+    root.appendChild(sec);
   });
-  const rabbit=document.createElement('section'); rabbit.className='card';
-  rabbit.innerHTML='<h2 class="title">Rabbit Holes</h2><ol>'+ (d.rabbitHoles||[]).map(x=>`<li>${x}</li>`).join('') +'</ol>';
+
+  const rabbit = document.createElement('section');
+  rabbit.className = 'section';
+  rabbit.innerHTML = `<h2>Rabbit Holes</h2><div class="read ${compact?'compact':''}"><ol>${(d.rabbitHoles||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ol></div>`;
   root.appendChild(rabbit);
 }
-(async function(){
-  const idx=await fetch('./index.json?_='+Date.now()).then(r=>r.json());
-  const runs=document.getElementById('runs');
-  (idx.runs||[]).forEach((r,i)=>{const b=document.createElement('button');b.className='run'+(r.path===idx.latest?' active':'');b.textContent=r.label||r.date;b.onclick=()=>{document.querySelectorAll('.run').forEach(x=>x.classList.remove('active'));b.classList.add('active');loadRun(r.path)};runs.appendChild(b)});
-  await loadRun(idx.latest||'latest.json');
+
+async function load(path){
+  const d = await fetch(path + '?_=' + Date.now()).then(r=>r.json());
+  renderRun(d);
+}
+
+(async function init(){
+  const idx = await fetch('./index.json?_=' + Date.now()).then(r=>r.json());
+  const runs = document.getElementById('runs');
+  (idx.runs||[]).forEach(r=>{
+    const b = document.createElement('button');
+    b.className = 'run' + (r.path===idx.latest ? ' active' : '');
+    b.textContent = r.label || r.date || r.path;
+    b.onclick = async ()=>{ document.querySelectorAll('.run').forEach(x=>x.classList.remove('active')); b.classList.add('active'); await load(r.path); };
+    runs.appendChild(b);
+  });
+  await load(idx.latest || 'latest.json');
 })();
+
+document.getElementById('modeBtn').onclick = ()=> document.body.classList.toggle('dark');
+document.getElementById('densityBtn').onclick = ()=>{ compact = !compact; document.getElementById('densityBtn').textContent = 'Reading: ' + (compact ? 'Compact' : 'Cozy'); document.querySelectorAll('.read').forEach(el=>el.classList.toggle('compact', compact)); };
 </script>
 </body>
 </html>
