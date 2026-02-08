@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-02-08 12:50 UTC",
+  "updatedAt": "2026-02-08 12:58 UTC",
   "tldr": [
-    "Vertical AI wins when it replaces workflows end-to-end, not as a bolt-on copilot.",
-    "Distribution + trust + auditability are stronger moats than model novelty in regulated categories.",
-    "Public market narratives now demand near-term unit economics, not optionality stories.",
-    "Leadership edge comes from repeatable repair loops and clear decision boundaries.",
-    "For ARPU: narrow premium modules with explicit ROI outperform broad AI feature packs.",
-    "Best teams combine forward-deployed customer loops with tight experiment decision rules."
+    "Vertical AI value is converging around workflow replacement, not assistant add-ons.",
+    "Distribution + trust + auditability remain stronger moats than model novelty.",
+    "Public-company narratives now require near-term unit-economics proof.",
+    "Leadership performance is increasingly about repair loops and decision hygiene.",
+    "For ARPU, narrow premium modules with measurable ROI outperform broad AI bundles.",
+    "Teams with fastest customer-feedback loops are compounding advantage."
   ],
   "episodes": [
     {
@@ -14,11 +14,63 @@
       "title": "The NFL (2026 Update)",
       "episodeUrl": "https://www.acquired.fm/episodes/the-nfl",
       "transcriptStatus": "pending",
-      "notes": "Transcript pipeline now configured. This seed entry predates transcript fetch. Future runs will include transcriptUrl + transcriptStatus=official/generated/partial/failed."
+      "notes": "1) Distribution rights still dominate value capture.\n2) Ritual usage (weekly appointment behavior) is a durable retention moat.\n3) Governance continuity compounds strategic consistency.\n4) Monetization is multi-rail: media, sponsors, ecosystem.\n5) Product implication: build repeatable rituals into premium modules.\n6) Claim: distribution control outperforms content control over time.\n7) Framework: Moat = Distribution × Habit × Governance.\n8) Counterpoint: rights concentration can suppress innovation velocity.\n9) Experiment A: weekly ritual module (metric: repeat WAU; decision: +15% vs control).\n10) Experiment B: sponsored premium slot (metric: ARPU + retention; decision: ARPU +6% and retention non-negative).\n11) What to ignore: loose sports analogies without mechanism mapping."
+    },
+    {
+      "show": "Lenny’s Podcast",
+      "title": "Dr. Becky on overlap between parenting and difficult adults",
+      "episodeUrl": "https://www.lennysnewsletter.com/p/dr-becky-on-the-surprising-overlap",
+      "transcriptStatus": "pending",
+      "notes": "1) Emotional safety improves decision quality under conflict.\n2) Reframing reduces defensiveness in hard conversations.\n3) Tactics: validate → boundary → request sequence.\n4) Product implication: lifecycle messaging should lower user defensiveness.\n5) Claim: tone architecture impacts conversion quality.\n6) Framework: Conflict loop = Trigger → Interpretation → Response.\n7) Counterpoint: over-accommodation can reduce accountability.\n8) Experiment A: onboarding copy reframing (metric: activation uplift; decision: +5%+).\n9) Experiment B: paywall language A/B (metric: paid conversion + refund rate; decision: conversion up, refunds flat).\n10) What to ignore: generic empathy platitudes without operational design."
+    },
+    {
+      "show": "Founders",
+      "title": "#411 Tortured Into Greatness: Andre Agassi",
+      "episodeUrl": "",
+      "transcriptStatus": "pending",
+      "notes": "1) Long-term output came from systems, not inspiration.\n2) Identity conflict can coexist with elite performance.\n3) Repetition under pressure builds reliability.\n4) Product implication: fixed weekly ship cadence beats sporadic bursts.\n5) Claim: constraints can sharpen execution quality.\n6) Framework: Performance = Process consistency × Recovery speed.\n7) Counterpoint: trauma-driven discipline is not a recommended template.\n8) Experiment A: weekly experiment ritual (metric: experiments shipped/week; decision: >=2 sustained).\n9) Experiment B: decision log discipline (metric: decision cycle time; decision: -20%).\n10) What to ignore: biography drama with no transferable mechanism."
+    },
+    {
+      "show": "20VC",
+      "title": "Navan public story + AI customer service",
+      "episodeUrl": "https://thetwentyminutevc.libsyn.com/20vc-from-62bn-market-cap-to-28bn-what-is-not-translating-about-navans-public-story-are-any-public-company-ceos-actually-happy-why-navan-built-its-own-customer-service-ai-and-what-it-could-mean-for-customer-service-ai-with-ariel-cohen",
+      "transcriptStatus": "pending",
+      "notes": "1) Public markets punish narrative ambiguity quickly.\n2) AI support wins when integrated with proprietary context.\n3) Build-vs-buy depends on data-loop advantage.\n4) Product implication: paid AI support lane for high-value users is viable.\n5) Claim: context quality is the product in support AI.\n6) Framework: Build-vs-buy = data leverage + integration depth + iteration speed.\n7) Counterpoint: in-house AI can increase organizational drag.\n8) Experiment A: premium AI support (metric: TTR + NPS + upsell; decision: NPS +8, upsell +3pp).\n9) Experiment B: context depth eval (metric: first-contact resolution; decision: +20% vs baseline).\n10) What to ignore: valuation chatter detached from customer behavior."
+    },
+    {
+      "show": "Invest Like the Best",
+      "title": "Ben Horowitz — Backing America’s Future",
+      "episodeUrl": "https://colossus.com/episode/backing-americas-future/",
+      "transcriptStatus": "pending",
+      "notes": "1) Enduring returns come from conviction + timing + structure.\n2) Platform and policy influence category outcomes.\n3) Concentration can outperform diversification when insight depth is high.\n4) Product implication: pick one ARPU wedge and dominate distribution.\n5) Claim: strategic clarity beats feature breadth.\n6) Framework: Edge stack = insight × access × execution speed.\n7) Counterpoint: concentration increases downside variance.\n8) Experiment A: one-module dominance sprint (metric: attach rate; decision: +25% in 6 weeks).\n9) Experiment B: narrative/positioning test (metric: win-rate in sales calls; decision: +10% absolute).\n10) What to ignore: macro posture with no tactical translation."
+    },
+    {
+      "show": "Training Data (Sequoia)",
+      "title": "Vertical SaaS in an AGI World",
+      "episodeUrl": "https://feeds.megaphone.fm/trainingdata",
+      "transcriptStatus": "pending",
+      "notes": "1) Trust bottleneck dominates in regulated adoption.\n2) Auditability + override controls are mandatory.\n3) BPO-replacement workflows are high-ROI AI targets.\n4) Buyers pay for variance reduction, not model IQ.\n5) Product implication: package compliance-safe automation as premium tier.\n6) Claim: reliability beats novelty in vertical AI.\n7) Framework: Trust stack = reliability + explainability + control.\n8) Counterpoint: over-governance can hurt UX velocity.\n9) Experiment A: one regulated workflow pilot (metric: cycle time + error; decision: -25% time with error <= baseline).\n10) Experiment B: audit add-on pricing (metric: attach + renewal; decision: attach >18%, renewal +4pp).\n11) What to ignore: AGI speculation not tied to buyer behavior."
+    },
+    {
+      "show": "Y Combinator Startup Podcast",
+      "title": "OpenClaw And The Future Of Personal AI Agents",
+      "episodeUrl": "https://podcasters.spotify.com/pod/show/ycombinator/episodes/OpenClaw-And-The-Future-Of-Personal-AI-Agents-e3eonov",
+      "transcriptStatus": "pending",
+      "notes": "1) Local-first + messaging-native UX massively reduces adoption friction.\n2) Agent usefulness scales with memory and tool integration.\n3) Outcome-oriented workflows drive retention.\n4) Product implication: sell outcomes, not AI access.\n5) Claim: distribution through existing behavior beats new-app installs.\n6) Framework: Utility = context memory × tool depth × response reliability.\n7) Counterpoint: broad permissions can create trust/safety concerns.\n8) Experiment A: outcome-pack pricing (metric: trial-to-paid; decision: +4pp).\n9) Experiment B: message-native onboarding (metric: day-7 retention; decision: +12%).\n10) What to ignore: agent branding hype without measurable utility."
+    },
+    {
+      "show": "Redpoint / Unsupervised Learning",
+      "title": "Ex-OpenAI researcher on RL scaling limits",
+      "episodeUrl": "https://unsupervised-learning.simplecast.com/episodes/ep-81-ex-openai-researcher-on-why-he-left-his-honest-agi-timeline-the-limits-of-scaling-rl-v8n6gexx-fZAknHYv",
+      "transcriptStatus": "pending",
+      "notes": "1) Scaling remains powerful but not sufficient for robust generalization.\n2) Evaluation quality is now a core bottleneck.\n3) Continual learning remains under-solved.\n4) Product implication: narrow task reliability wins over broad claims.\n5) Claim: benchmark gains can overstate real-world capability.\n6) Framework: Capability = scale × data quality × eval rigor.\n7) Counterpoint: premature pessimism can miss compounding gains.\n8) Experiment A: reliability-first model gating (metric: task success variance; decision: variance -30%).\n9) Experiment B: eval harness upgrade (metric: escaped failures; decision: -40%).\n10) What to ignore: timeline debates without deployment constraints."
     }
   ],
   "rabbitHoles": [
-    "How to make transcript confidence visible per section?",
-    "What insights materially change with full transcript vs summaries?"
+    "How to create ritual usage loops in SMB product surfaces?",
+    "Where should auditability be priced: feature, tier, or usage add-on?",
+    "What threshold flips AI support from buy to build in your context?",
+    "Which leading indicators best predict ARPU lift before revenue catches up?",
+    "How to enforce experiment decision rules operationally every week?"
   ]
 }
