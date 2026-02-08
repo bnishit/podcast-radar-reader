@@ -1,1 +1,69 @@
-<!doctype html><html><head><meta charset='utf-8'/><meta name='viewport' content='width=device-width,initial-scale=1'/><title>Podcast Radar</title><style>body{font-family:Inter,system-ui,sans-serif;background:#faf7ff;color:#1f1630;max-width:900px;margin:0 auto;padding:20px;line-height:1.6}h1{font-size:28px}h2{margin-top:26px}pre{white-space:pre-wrap;background:#fff;border:1px solid #ece3ff;padding:14px;border-radius:12px}.card{background:#fff;border:1px solid #ece3ff;border-radius:14px;padding:14px;margin:12px 0}.muted{color:#6d6485}</style></head><body><h1>Podcast Radar — Deep Notes</h1><div class='muted' id='ts'>Loading…</div><div id='root'></div><script>fetch('./latest.json?_='+Date.now()).then(r=>r.json()).then(d=>{document.getElementById('ts').textContent='Updated: '+(d.updatedAt||'');const root=document.getElementById('root');root.innerHTML='';const t=document.createElement('div');t.className='card';t.innerHTML='<h2>TL;DR</h2><pre>'+ (d.tldr||[]).map((x,i)=>`${i+1}. ${x}`).join('\n') +'</pre>';root.appendChild(t);(d.episodes||[]).forEach(ep=>{const c=document.createElement('div');c.className='card';c.innerHTML=`<h2>${ep.show} — ${ep.title}</h2><pre>${ep.notes||''}</pre>`;root.appendChild(c);});const r=document.createElement('div');r.className='card';r.innerHTML='<h2>Rabbit Holes</h2><pre>'+ (d.rabbitHoles||[]).map((x,i)=>`${i+1}. ${x}`).join('\n') +'</pre>';root.appendChild(r);}).catch(()=>{document.getElementById('root').innerHTML='<div class="card">No notes yet.</div>';document.getElementById('ts').textContent='';});</script></body></html>
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width,initial-scale=1'/>
+  <title>Podcast Radar — Deep Notes</title>
+  <style>
+    :root{--bg:#f6f3ff;--card:#fff;--ink:#1f1630;--muted:#6d6485;--line:#e9e2ff;--accent:#6b46ff}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+    .wrap{max-width:940px;margin:0 auto;padding:18px}
+    h1{margin:0 0 6px;font-size:30px} .muted{color:var(--muted)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+    .title{font-size:21px;margin:0 0 6px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .chip{font-size:12px;border:1px solid var(--line);padding:4px 8px;border-radius:999px;color:#4e4570;background:#faf8ff}
+    .btn{font-size:12px;padding:6px 10px;border-radius:8px;background:#fff;border:1px solid var(--line);text-decoration:none;color:#342a57}
+    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    ol{margin:8px 0 0 18px;padding:0} li{margin:6px 0;line-height:1.45}
+    details{margin-top:8px} summary{cursor:pointer;color:#3f2f73;font-weight:600}
+    pre{white-space:pre-wrap;background:#fbfaff;border:1px solid var(--line);padding:12px;border-radius:10px;line-height:1.5;overflow:auto}
+  </style>
+</head>
+<body>
+  <div class='wrap'>
+    <h1>Podcast Radar — Deep Notes</h1>
+    <div id='updated' class='muted'>Loading…</div>
+    <div id='root'></div>
+  </div>
+
+<script>
+(async function(){
+  const root=document.getElementById('root');
+  try{
+    const d=await fetch('./latest.json?_='+Date.now()).then(r=>r.json());
+    document.getElementById('updated').textContent='Updated: '+(d.updatedAt||'');
+
+    const tldr=document.createElement('section');
+    tldr.className='card';
+    tldr.innerHTML='<h2 class="title">TL;DR</h2><ol>'+ (d.tldr||[]).map(x=>`<li>${x}</li>`).join('') +'</ol>';
+    root.appendChild(tldr);
+
+    (d.episodes||[]).forEach(ep=>{
+      const c=document.createElement('section'); c.className='card';
+      const links=[];
+      if(ep.episodeUrl) links.push(`<a class='btn primary' target='_blank' href='${ep.episodeUrl}'>Open episode</a>`);
+      if(ep.transcriptUrl) links.push(`<a class='btn' target='_blank' href='${ep.transcriptUrl}'>Transcript</a>`);
+      const tr=ep.transcriptStatus?`<span class='chip'>Transcript: ${ep.transcriptStatus}</span>`:'';
+      c.innerHTML=`
+        <div class='row' style='justify-content:space-between'>
+          <h2 class='title' style='margin:0'>${ep.show} — ${ep.title}</h2>
+        </div>
+        <div class='row'>${tr}${links.join('')}</div>
+        <details open>
+          <summary>Deep notes</summary>
+          <pre>${ep.notes||''}</pre>
+        </details>`;
+      root.appendChild(c);
+    });
+
+    const rabbit=document.createElement('section'); rabbit.className='card';
+    rabbit.innerHTML='<h2 class="title">Rabbit Holes</h2><ol>'+ (d.rabbitHoles||[]).map(x=>`<li>${x}</li>`).join('') +'</ol>';
+    root.appendChild(rabbit);
+  }catch(e){
+    document.getElementById('updated').textContent='Failed to load';
+    root.innerHTML='<div class="card">No notes yet.</div>';
+  }
+})();
+</script>
+</body>
+</html>

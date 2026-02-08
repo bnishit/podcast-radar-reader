@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-08 12:46 UTC",
+  "updatedAt": "2026-02-08 12:50 UTC",
   "tldr": [
     "Vertical AI wins when it replaces workflows end-to-end, not as a bolt-on copilot.",
     "Distribution + trust + auditability are stronger moats than model novelty in regulated categories.",
@@ -12,16 +12,22 @@
     {
       "show": "Acquired",
       "title": "The NFL (2026 Update)",
+      "episodeUrl": "https://www.acquired.fm/episodes/the-nfl",
+      "transcriptStatus": "pending full transcript",
       "notes": "Concrete notes:\n1) Distribution economics (rights + habitual viewership) dominate star-level variability.\n2) Ritual cadence (weekly appointment behavior) is a durable retention engine.\n3) Governance continuity compounds over decades.\n4) Multi-surface monetization (broadcast, digital, sponsorship) reduces revenue volatility.\n5) Product takeaway: build ritual + social accountability into recurring features.\n6) Rights-like control points are stronger than feature velocity alone.\n7) Measurable engagement windows can become premium ad/sponsor inventory.\n8) Network effects include fan identity, creator ecosystem, and adjacent products.\n\n3 claims worth remembering:\n- Habit architecture is a moat.\n- Control of distribution outruns control of content.\n- Governance stability is an execution advantage.\n\n2 frameworks:\n- Moat stack = Distribution × Ritual × Governance.\n- Revenue resilience = # of independent monetization rails.\n\n2 counterpoints:\n- Rights concentration can reduce innovation speed.\n- Ritual dependence can overexpose seasonality risk.\n\n2 experiments:\n- Weekly ritual module test: Metric = WAU repeat on fixed day; Decision = keep if +15% repeat vs control in 4 weeks.\n- Sponsored premium workflow slot: Metric = ARPU uplift + retention delta; Decision = keep if ARPU +6% and retention non-negative.\n\nWhat to ignore: superficial sports analogies without mechanism mapping to your product."
     },
     {
       "show": "20VC",
       "title": "Navan public story + AI customer support",
+      "episodeUrl": "https://thetwentyminutevc.libsyn.com/20vc-from-62bn-market-cap-to-28bn-what-is-not-translating-about-navans-public-story-are-any-public-company-ceos-actually-happy-why-navan-built-its-own-customer-service-ai-and-what-it-could-mean-for-customer-service-ai-with-ariel-cohen",
+      "transcriptStatus": "pending full transcript",
       "notes": "Concrete notes:\n1) Public markets punish narrative gaps quickly when fundamentals are unclear.\n2) AI support systems perform best with proprietary context and workflow-level integration.\n3) Build-vs-buy in AI support depends on data exhaust ownership.\n4) Post-IPO communication must tie roadmap to measurable margin/revenue effects.\n5) Internal tooling advantage grows with feedback loop speed.\n6) Generic support bots underperform in high-stakes workflows.\n7) Unit economics framing should precede AI ambition framing.\n8) Product-market proof must be explicit by segment, not aggregate.\n\n3 claims:\n- Context is the product in AI support.\n- Public narrative lag is now expensive.\n- In-house AI is justified only with proprietary loop depth.\n\n2 frameworks:\n- Build-vs-buy score = (Data leverage + Integration depth + Iteration speed) - Maintenance burden.\n- Story-to-market fit = Narrative clarity × Metric credibility.\n\n2 counterpoints:\n- In-house AI can create focus drag.\n- Public pressure can force short-termism.\n\n2 experiments:\n- Premium AI support lane: Metric = time-to-resolution, NPS, upgrade rate; Decision = keep if NPS +8 and upgrade +3pp.\n- Context depth test: Metric = first-contact resolution; Decision = ship fully if +20% vs generic model baseline.\n\nWhat to ignore: valuation chatter detached from product or customer behavior signals."
     },
     {
       "show": "Training Data (Sequoia)",
       "title": "Vertical SaaS in an AGI world",
+      "episodeUrl": "https://feeds.megaphone.fm/trainingdata",
+      "transcriptStatus": "pending full transcript",
       "notes": "Concrete notes:\n1) Enterprise adoption bottleneck is trust and controllability, not demo quality.\n2) Regulated verticals require audit trails, policy gates, and human override.\n3) AI wins where it replaces BPO-like repetitive operations end-to-end.\n4) Buyers pay for reduced variance, not raw model IQ.\n5) Explainability is commercial, not just compliance, infrastructure.\n6) Domain-tuned evals beat generic benchmark bragging.\n7) Workflow insertion points matter more than model brand.\n8) Product packaging should map to operational outcomes (errors, SLA, throughput).\n\n3 claims:\n- Reliability beats novelty in verticals.\n- Auditability is part of value prop.\n- Outcome ownership is the monetization unlock.\n\n2 frameworks:\n- Trust stack = Reliability + Explainability + Control.\n- Value equation = (Time saved + Error reduced + Variance reduced) per workflow.\n\n2 counterpoints:\n- Over-governed workflows can kill UX speed.\n- Vertical specificity may cap TAM if not extensible.\n\n2 experiments:\n- One regulated workflow automation pilot: Metric = cycle time + error rate; Decision = expand if time -25% with error <= baseline.\n- Audit-layer premium add-on: Metric = attach rate + renewal delta; Decision = keep if attach >18% and renewals +4pp.\n\nWhat to ignore: AGI timeline debates without current buyer behavior evidence."
     }
   ],
