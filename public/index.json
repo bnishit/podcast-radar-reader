@@ -1,6 +1,11 @@
 {
-  "latest": "runs/2026-02-10.json",
+  "latest": "runs/2026-02-10-note-3XVDtPU8xKE.json",
   "runs": [
+    {
+      "date": "2026-02-10",
+      "path": "runs/2026-02-10-note-3XVDtPU8xKE.json",
+      "label": "10 Feb 2026 \u00b7 NOTE \u00b7 3XVDtPU8xKE"
+    },
     {
       "date": "2026-02-10",
       "path": "runs/2026-02-10.json",
@@ -14,7 +19,7 @@
     {
       "date": "2026-02-08",
       "path": "runs/2026-02-08-note-CHscuD6Q4xs.json",
-      "label": "08 Feb 2026 · NOTE · CHscuD6Q4xs"
+      "label": "08 Feb 2026 \u00b7 NOTE \u00b7 CHscuD6Q4xs"
     },
     {
       "date": "2026-02-08",
