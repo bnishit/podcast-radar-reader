@@ -1,6 +1,11 @@
 {
-  "latest": "runs/2026-02-09.json",
+  "latest": "runs/2026-02-10.json",
   "runs": [
+    {
+      "date": "2026-02-10",
+      "path": "runs/2026-02-10.json",
+      "label": "10 Feb 2026"
+    },
     {
       "date": "2026-02-09",
       "path": "runs/2026-02-09.json",
